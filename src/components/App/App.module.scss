@@ -1,12 +1,20 @@
-$back-color: #F3F7FA;
+@import '../../variables';
 
-.App {
+.app {
     background-color: $back-color;
     width: 960px;
     min-height: 1350px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 20px;
+    
+    &__img {
+        grid-column: span 2;
+        margin: 50px auto 50px 450px;
+    }
+    
 }
 
-.App__img {
-    margin: 50px auto 50px 450px;
-}
+

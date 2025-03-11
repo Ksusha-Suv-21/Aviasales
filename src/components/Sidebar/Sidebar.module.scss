@@ -11,7 +11,7 @@
     font-weight: 600;
     font-size: 12px;
     line-height: 12spx;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     color: $titles;
     box-shadow: 0 3px 15px -5px #a0b0b9;
 
@@ -27,6 +27,7 @@
 
     &__item {
         padding: 10px 20px;
+        cursor: pointer;
     }
 
     &__item:hover {
@@ -51,7 +52,7 @@
     height: 20px;
     flex-shrink: 0;
     flex-grow: 0;
-    border: 1px solid $chekbox;
+    border: 1.5px solid $chekbox;
     border-radius: 0.25em;
     margin-right: 10px;
     background-repeat: no-repeat;

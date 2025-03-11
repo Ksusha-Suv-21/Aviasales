@@ -3,6 +3,7 @@ import logo from './Logo.png'
 
 import Filter from '../Filter/Filter'
 import Sidebar from '../Sidebar/Sidebar'
+import TicketList from '../TicketList/TicketList'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Sidebar />
       <section>
         <Filter />
-        <div>//ticketlist</div>
+        <TicketList />
       </section>
     </div>
   )

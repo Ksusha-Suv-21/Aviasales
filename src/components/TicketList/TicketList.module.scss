@@ -1,0 +1,19 @@
+@import '../../variables';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.ticketList {
+    &__button {
+        width: 502px;
+        height: 50px;
+        border: none;
+        background-color: $blue;
+        color: white;
+        border-radius: 5px;
+        margin-top: 20px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 12spx;
+        letter-spacing: 1px;
+    }
+}

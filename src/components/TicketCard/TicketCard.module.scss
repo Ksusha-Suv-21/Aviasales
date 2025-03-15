@@ -1,6 +1,55 @@
-@import '../../variables';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import '../../variables.module';
 
 .ticketCard {
-    padding: auto;
+    background-color: white;
+    width: 77%;
+    border-radius: 5px;
+    box-shadow: 0 3px 15px -5px $shadow;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    &__price-logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    &__price{
+        color: $blue;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0;
+        text-transform: uppercase;
+    }
+
+    &__info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 20px;
+
+    }
+
+    &__info-text {
+        color: $shadow;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+
+    }
+
+    &__info-data {
+        text-transform: uppercase;
+        color: $titles;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 }

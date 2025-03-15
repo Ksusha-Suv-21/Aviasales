@@ -1,11 +1,26 @@
+import { useState } from 'react'
 import classes from './TicketList.module.scss'
 import TicketCard from '../TicketCard/TicketCard'
 
-function TicketList() {
+function TicketList({ tickets }) {
+  const [count, setCount] = useState(5)
+
+  const showMore = () => {
+    setCount((count) => {
+      return count + 5
+    })
+  }
+
+  const ticketsSlice = tickets.slice(0, count)
+
   return (
     <div className={classes.ticketList}>
-      <TicketCard />
-      <button className={classes['ticketList__button']}>ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!</button>
+      {ticketsSlice.map((ticket, id) => (
+        <TicketCard key={id} ticket={ticket} />
+      ))}
+      <button className={classes['ticketList__button']} onClick={showMore} count={count}>
+        ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
+      </button>
     </div>
   )
 }

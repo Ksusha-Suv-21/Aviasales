@@ -14,6 +14,7 @@
   "dependencies": {
     "antd": "^5.24.3",
     "babel-eslint": "^10.1.0",
+    "date-fns": "^4.1.0",
     "eslint": "^9.22.0",
     "eslint-plugin-react": "^7.37.4",
     "react": "^19.0.0",

@@ -1,5 +1,7 @@
-@import './variables';
+@import './variables.module';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 body {
-    margin: 0
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
 }

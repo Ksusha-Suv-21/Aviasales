@@ -1,19 +1,17 @@
-@import '../../variables';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import '../../variables.module';
 
 .sidebar{
     margin-left: 103px;
     border-radius: 5px;
     background-color: white;
     width: 232px;
-    height: 280px;
-    font-family: "Open Sans", sans-serif;
+    height: 266px;
     font-weight: 600;
     font-size: 12px;
-    line-height: 12spx;
+    line-height: 12px;
     letter-spacing: 1px;
     color: $titles;
-    box-shadow: 0 3px 15px -5px #a0b0b9;
+    box-shadow: 0 3px 15px -5px $shadow;
 
     &__item-label {
         font-weight: 400;
@@ -41,8 +39,8 @@
     }
     &__item-checkbox+&__item-label {
         display: inline-flex;
-    align-items: center;
-    user-select: none;
+        align-items: center;
+        user-select: none;
     }
 
     &__item-checkbox+&__item-label::before {

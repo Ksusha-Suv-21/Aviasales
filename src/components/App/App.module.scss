@@ -1,20 +1,37 @@
 @import '../../variables.module';
 
 .app {
-    background-color: $back-color;
-    width: 960px;
+    max-width: 960px;
+    min-width: 340px;
     min-height: 1350px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     column-gap: 20px;
+    padding: 50px 30px;
     
     &__img {
         grid-column: span 2;
-        margin: 50px auto 50px 450px;
+        margin: 0 auto 50px 450px;
     }
     
+    &__section {
+        min-width: 340px;
+    }
 }
 
 
+@media (max-width: 600px) {
+    .app {
+        grid-template-columns:  1fr;
+        grid-template-rows:  1fr;
+
+        &__img {
+            grid-column: span 1;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+    }
+    
+}

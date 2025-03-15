@@ -1,10 +1,10 @@
 @import '../../variables.module';
 
 .sidebar{
-    margin-left: 103px;
     border-radius: 5px;
     background-color: white;
-    width: 232px;
+    max-width: 232px;
+    width: 100%;
     height: 266px;
     font-weight: 600;
     font-size: 12px;
@@ -65,4 +65,23 @@
 
 }
 
+@media (max-width: 600px) {
+  
+    .sidebar{
+        max-width: 502px;
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+        padding-bottom: 10px;
 
+        &__item {
+            padding: 5px 20px;
+        }
+        &__legend {
+            grid-column: 1 / 3;
+        }
+    }
+
+    
+}

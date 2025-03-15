@@ -20,7 +20,7 @@ function App({ value }) {
       <img className={classes['app__img']} src={logo} alt="logo" />
 
       <Sidebar />
-      <section>
+      <section className={classes['app__section']}>
         <Filter />
         <TicketList tickets={tickets} />
       </section>

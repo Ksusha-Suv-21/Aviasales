@@ -13,12 +13,13 @@
     height: 50px;
 
     &__item {
-        width: 166.5px;
+        width: 100%;
         border: 1px solid $border;
         border-right: none;
         background-color: white;
         align-content: center;
         text-align: center;
+        
     }
 
     &__item:last-child {

@@ -17,13 +17,16 @@ function App({ value }) {
 
   return (
     <div className={classes.app}>
-      <img className={classes['app__img']} src={logo} alt="logo" />
-
-      <Sidebar />
-      <section className={classes['app__section']}>
-        <Filter />
-        <TicketList tickets={tickets} />
-      </section>
+      <header className={classes['app__header']}>
+        <img className={classes['app__img']} src={logo} alt="logo" />
+      </header>
+      <div className={classes['app__main']}>
+        <Sidebar />
+        <section className={classes['app__main-section']}>
+          <Filter />
+          <TicketList tickets={tickets} />
+        </section>
+      </div>
     </div>
   )
 }

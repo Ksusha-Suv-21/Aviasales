@@ -13,8 +13,8 @@ function TicketCard({ ticket }) {
     return `${hours}ч ${mins}м`
   }
 
-  const stopsCount = (arr) => {
-    const count = arr.length
+  const allStops = (data) => {
+    const count = data.length
     if (count === 0) {
       return 'Без пересадок'
     } else if (count === 1) {
@@ -41,7 +41,7 @@ function TicketCard({ ticket }) {
           <div className={classes['ticketCard__info']} key={id}>
             <p className={classes['ticketCard__info-text']}>{`${origin} - ${destination}`}</p>
             <p className={classes['ticketCard__info-text']}>В пути</p>
-            <p className={classes['ticketCard__info-text']}>{stopsCount(stops)}</p>
+            <p className={classes['ticketCard__info-text']}>{allStops(stops)}</p>
             <p
               className={classes['ticketCard__info-data']}
             >{`${departureTime(date)} - ${arrivalTime(date, duration)}`}</p>

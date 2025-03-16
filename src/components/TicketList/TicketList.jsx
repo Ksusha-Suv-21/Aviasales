@@ -5,7 +5,7 @@ import TicketCard from '../TicketCard/TicketCard'
 function TicketList({ tickets }) {
   const [count, setCount] = useState(5)
 
-  const showMore = () => {
+  const showMoreButton = () => {
     setCount((count) => {
       return count + 5
     })
@@ -18,7 +18,7 @@ function TicketList({ tickets }) {
       {ticketsSlice.map((ticket, id) => (
         <TicketCard key={id} ticket={ticket} />
       ))}
-      <button className={classes['ticketList__button']} onClick={showMore} count={count}>
+      <button className={classes['ticketList__button']} onClick={showMoreButton} count={count}>
         ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
       </button>
     </div>

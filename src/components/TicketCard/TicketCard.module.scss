@@ -43,7 +43,6 @@
     }
 
     &__info-data {
-        text-transform: uppercase;
         color: $titles;
         font-weight: 400;
         font-size: 14px;
@@ -52,4 +51,10 @@
         margin-top: 0;
         margin-bottom: 0;
     }
+
+    &__info-data:last-child{
+        text-transform: uppercase;
+    }
+
 }
+

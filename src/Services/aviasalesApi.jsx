@@ -17,15 +17,13 @@ const getSearchId = async () => {
 
 const getTickets = async () => {
   const searchId = await getSearchId()
-  const url = `${apiBaseUrl}tickets?searchId=${searchId}`
-  const res = await fetch(url)
-  const obj = await res.json()
+  const res = await fetch(`${apiBaseUrl}tickets?searchId=${searchId}`)
+  const data = await res.json()
 
-  if (obj.stop) {
+  if (data.stop) {
     sessionStorage.removeItem('searchId')
   }
-
-  return obj
+  return data
 }
 
 export default getTickets

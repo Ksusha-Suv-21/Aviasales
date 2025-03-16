@@ -16,14 +16,19 @@ const getSearchId = async () => {
 }
 
 const getTickets = async () => {
-  const searchId = await getSearchId()
-  const res = await fetch(`${apiBaseUrl}tickets?searchId=${searchId}`)
-  const data = await res.json()
+  try {
+    const searchId = await getSearchId()
+    const res = await fetch(`${apiBaseUrl}tickets?searchId=${searchId}`)
+    const data = await res.json()
 
-  if (data.stop) {
-    sessionStorage.removeItem('searchId')
+    if (data.stop) {
+      sessionStorage.removeItem('searchId')
+    }
+    return data
+  } catch (err) {
+    console.error('Возникла проблема с fetch запросом: ', err.message)
+    return err.message
   }
-  return data
 }
 
 export default getTickets

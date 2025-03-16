@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import classes from './App.module.scss'
 import logo from './Logo.png'
 import getTickets from '../../Services/aviasalesApi'
-import Filter from '../Filter/Filter'
+
 import Sidebar from '../Sidebar/Sidebar'
-import TicketList from '../TicketList/TicketList'
+
+import Main from '../Main/Main'
 
 function App({ value }) {
   const [tickets, setTickets] = useState([])
@@ -22,10 +23,7 @@ function App({ value }) {
       </header>
       <div className={classes['app__main']}>
         <Sidebar />
-        <section className={classes['app__main-section']}>
-          <Filter />
-          <TicketList tickets={tickets} />
-        </section>
+        <Main tickets={tickets} />
       </div>
     </div>
   )

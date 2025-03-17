@@ -3,7 +3,7 @@ import classes from './App.module.scss'
 import logo from './Logo.png'
 import getTickets from '../../Services/aviasalesApi'
 
-import Sidebar from '../Sidebar/Sidebar'
+import Checkbox from '../Checkbox/Checkbox'
 
 import Main from '../Main/Main'
 
@@ -22,7 +22,7 @@ function App({ value }) {
         <img className={classes['app__img']} src={logo} alt="logo" />
       </header>
       <div className={classes['app__main']}>
-        <Sidebar />
+        <Checkbox />
         <Main tickets={tickets} />
       </div>
     </div>

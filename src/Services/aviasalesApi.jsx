@@ -12,12 +12,14 @@ const getSearchId = async () => {
     throw new Error('Could not fetch')
   }
   sessionStorage.setItem('searchId', data.searchId)
+
   return data.searchId
 }
 
 const getTickets = async () => {
   try {
     const searchId = await getSearchId()
+
     const res = await fetch(`${apiBaseUrl}tickets?searchId=${searchId}`)
     const data = await res.json()
 

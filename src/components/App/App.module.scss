@@ -7,20 +7,11 @@
     margin: 0 auto;
     padding: 50px 30px;
     
-    &__img {
-        grid-column: span 2;
-        margin: 0 auto 50px;
-    }
-
     &__main {
         display: grid;
         grid-template-columns: auto 1fr;
         grid-template-rows: auto 1fr;
         column-gap: 20px;
-    }
-    
-    &__header {
-        display: grid;
     }
 }
 
@@ -30,11 +21,6 @@
         &__main{
             grid-template-columns:  1fr;
             grid-template-rows:  1fr;
-        }
-        &__img {
-            grid-column: span 1;
-            margin: 0 auto;
-            margin-bottom: 20px;
         }
     }
     

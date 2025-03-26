@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import classes from './App.module.scss'
-import logo from './Logo.png'
+
 import getTickets from '../../Services/aviasalesApi'
 
+import Header from '../Header/Header'
 import Checkbox from '../Checkbox/Checkbox'
-
 import Main from '../Main/Main'
 
 function App({ value }) {
@@ -18,9 +18,7 @@ function App({ value }) {
 
   return (
     <div className={classes.app}>
-      <header className={classes['app__header']}>
-        <img className={classes['app__img']} src={logo} alt="logo" />
-      </header>
+      <Header />
       <div className={classes['app__main']}>
         <Checkbox />
         <Main tickets={tickets} />

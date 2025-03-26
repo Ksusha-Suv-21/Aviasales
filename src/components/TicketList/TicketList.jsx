@@ -11,11 +11,11 @@ function TicketList({ tickets }) {
     })
   }
 
-  const ticketsSlice = tickets.slice(0, count)
+  //const ticketsSlice = tickets.slice(0, count)
 
   return (
     <div className={classes.ticketList}>
-      {ticketsSlice.map((ticket, id) => (
+      {tickets?.slice(0, count).map((ticket, id) => (
         <TicketCard key={id} ticket={ticket} />
       ))}
       <button className={classes['ticketList__button']} onClick={showMoreButton} count={count}>

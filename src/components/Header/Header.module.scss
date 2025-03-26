@@ -1,0 +1,22 @@
+
+.header {
+    display: grid;
+
+    &__img {
+        grid-column: span 2;
+        margin: 0 auto 50px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .header {
+        
+        &__img {
+            grid-column: span 1;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+    }
+    
+}

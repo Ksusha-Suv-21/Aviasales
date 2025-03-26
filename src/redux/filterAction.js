@@ -1,0 +1,1 @@
+export const filterAction = (type, payload) => ({ type, payload })

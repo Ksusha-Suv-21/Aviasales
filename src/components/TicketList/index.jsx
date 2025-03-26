@@ -1,3 +1,3 @@
-import TicketList from './Filter'
+import TicketList from './TicketList'
 
 export default TicketList

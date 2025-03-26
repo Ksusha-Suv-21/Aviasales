@@ -1,3 +1,3 @@
-import TicketCard from './Filter'
+import TicketCard from './TicketCard'
 
 export default TicketCard

@@ -1,6 +1,6 @@
 import classes from './Checkbox.module.scss'
 
-import * as actions from '../../redux/checkboxAcction'
+import * as actions from '../../redux/actions/checkboxAcction'
 import { connect } from 'react-redux'
 
 const Checkbox = ({ checkboxItems, checkboxAction, checkboxAllAction }) => {

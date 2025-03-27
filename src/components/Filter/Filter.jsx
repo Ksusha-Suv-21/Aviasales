@@ -1,7 +1,53 @@
 import classes from './Filter.module.scss'
-import { connect } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
 
-import { filterAction } from '../../redux/filterAction'
+import * as actions from '../../redux/actions/filterAction'
+
+const Filter = ({ filters, filterByPriice, filterByFastest, filterByOptimal }) => {
+  const dispatch = useDispatch()
+
+  const handleFilterByPrice = () => {
+    dispatch(filterByPriice())
+  }
+
+  const handleFilterByFastest = () => {
+    dispatch(filterByFastest())
+  }
+
+  const handleFilterByOptimal = () => {
+    dispatch(filterByOptimal())
+  }
+
+  return (
+    <ul className={classes.filter}>
+      <li
+        className={`${classes['filter__item']} ${filters.price ? classes['filter__selected'] : ''}`}
+        onClick={handleFilterByPrice}
+      >
+        <a className={classes['filter__item-link']}>САМЫЙ ДЕШЕВЫЙ</a>
+      </li>
+      <li
+        className={`${classes['filter__item']} ${filters.fastest ? classes['filter__selected'] : ''}`}
+        onClick={handleFilterByFastest}
+      >
+        <a className={classes['filter__item-link']}>САМЫЙ БЫСТРЫЙ</a>
+      </li>
+      <li
+        className={`${classes['filter__item']} ${filters.optimal ? classes['filter__selected'] : ''}`}
+        onClick={handleFilterByOptimal}
+      >
+        <a className={classes['filter__item-link']}>ОПТИМАЛЬНЫЙ</a>
+      </li>
+    </ul>
+  )
+}
+
+const mapStateToProps = (state) => ({ filters: state.filterReducer })
+export default connect(mapStateToProps, actions)(Filter)
+
+/*
+import { filterAction } from '../../redux/actions/filterAction'
+
 
 const Filter = ({ filters, filterAction }) => {
   return (
@@ -13,30 +59,56 @@ const Filter = ({ filters, filterAction }) => {
             key={id}
             onClick={item.checked ? () => {} : () => filterAction('filter', item.value)}
           >
-            <a className={classes['filter__item-link']}>САМЫЙ ДЕШЕВЫЙ</a>
+            <a className={classes['filter__item-link']}>{item.label}</a>
           </li>
         )
       })}
     </ul>
   )
 }
-
 const mapStateToProps = (state) => ({ filters: state.filterReducer })
-
 export default connect(mapStateToProps, { filterAction })(Filter)
+------------------------------------------
 
-/*
+const Filter = () => {
+  const dispatch = useDispatch()
+  const { price, fastest, optimal } = useSelector((state) => state.filterReducer)
 
-<ul className={classes.filter}>
-      <li className={`${classes['filter__item']} ${classes['filter__selected']}`}>
+
+  const handleFilterByPrice = () => {
+    dispatch(filterByPriice())
+  }
+
+  const handleFilterByFastest = () => {
+    dispatch(filterByFastest())
+  }
+
+  const handleFilterByOptimal = () => {
+    dispatch(filterByOptimal())
+  }
+
+  return (
+    <ul className={classes.filter}>
+      <li
+        className={`${classes['filter__item']} ${price ? classes['filter__selected'] : ''}`}
+        onClick={handleFilterByPrice}
+      >
         <a className={classes['filter__item-link']}>САМЫЙ ДЕШЕВЫЙ</a>
       </li>
-      <li className={classes['filter__item']}>
+      <li
+        className={`${classes['filter__item']} ${fastest ? classes['filter__selected'] : ''}`}
+        onClick={handleFilterByFastest}
+      >
         <a className={classes['filter__item-link']}>САМЫЙ БЫСТРЫЙ</a>
       </li>
-      <li className={classes['filter__item']}>
+      <li
+        className={`${classes['filter__item']} ${optimal ? classes['filter__selected'] : ''}`}
+        onClick={handleFilterByOptimal}
+      >
         <a className={classes['filter__item-link']}>ОПТИМАЛЬНЫЙ</a>
       </li>
     </ul>
-
+  )
+}
+  export default Filter
     */

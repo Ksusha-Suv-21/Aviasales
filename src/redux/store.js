@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
-import filterReducer from "./filterReduser"
-import checkboxReducer from './checkboxReducer'
+import filterReducer from "./reducer/filterReduser"
+import checkboxReducer from './reducer/checkboxReducer'
 
 const reducer = combineReducers({
     filterReducer,

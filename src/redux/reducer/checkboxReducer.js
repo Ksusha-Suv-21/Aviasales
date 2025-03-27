@@ -9,14 +9,15 @@ const initialState = [
   
 const checkboxReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'all':
+        case 'ALL':
             return state.map((item) => (item.checked !== action.checked ? { ...item, checked: !item.checked } : { ...item }))
-        case 'filter':
+        case 'FILTER':
             return state.map((item) => (item.value === action.value ? { ...item, checked: !item.checked } : { ...item }))
             
         default: 
-        return state
+            return state
     }
 }
 
 export default checkboxReducer
+

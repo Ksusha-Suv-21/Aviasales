@@ -26,20 +26,25 @@
         border-radius: 0 5px 5px 0;
         border-right: 1px solid $border;
     }
+    
     &__item:first-child {
         border-radius: 5px 0 0 5px;
     }
+
     &__item:hover {
         border: none;
         background-color: $blue;
         color: white;
-        
     }
    
     &__selected {
         border: none;
         background-color: $blue;
         color: white;
+    }
+
+    &__item-link {
+        text-transform: uppercase;
     }
 
 }

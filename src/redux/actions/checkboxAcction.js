@@ -1,2 +1,2 @@
-export const checkboxAllAction = (checked) => ({ type: 'ALL', checked })
-export const checkboxAction = (value) => ({ type: 'FILTER', value })
+export const checkboxAllAC = (checked) => ({ type: 'ALL', checked })
+export const checkboxAC = (value) => ({ type: 'FILTER', value })

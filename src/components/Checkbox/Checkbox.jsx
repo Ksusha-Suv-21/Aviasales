@@ -3,21 +3,21 @@ import classes from './Checkbox.module.scss'
 import * as actions from '../../redux/actions/checkboxAcction'
 import { connect } from 'react-redux'
 
-const Checkbox = ({ checkboxItems, checkboxAction, checkboxAllAction }) => {
+const Checkbox = ({ checkboxItems, checkboxAC, checkboxAllAC }) => {
   const toggleCheckbox = (value, checked) => {
     const all = { ...checkboxItems[0] }
 
     const points = checkboxItems.slice(1)
 
     if (value === 'all') {
-      checkboxAllAction(checked)
+      checkboxAllAC(checked)
     } else {
       if (all.checked) {
-        checkboxAction('all')
+        checkboxAC('all')
       } else if (points.filter((item) => item.checked).length === 3 && !all.checked && checked) {
-        checkboxAction('all')
+        checkboxAC('all')
       }
-      checkboxAction(value)
+      checkboxAC(value)
     }
   }
 

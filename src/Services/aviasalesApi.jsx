@@ -1,6 +1,6 @@
 const apiBaseUrl = 'https://aviasales-test-api.kata.academy/'
 
-const getSearchId = async () => {
+export const getSearchId = async () => {
   if (sessionStorage.getItem('searchId')) {
     return sessionStorage.getItem('searchId')
   }
@@ -16,24 +16,18 @@ const getSearchId = async () => {
   return data.searchId
 }
 
-const getTickets = async () => {
-  try {
-    const searchId = await getSearchId()
+export const getTickets = async () => {
+  const searchId = await getSearchId()
 
-    const res = await fetch(`${apiBaseUrl}tickets?searchId=${searchId}`)
-    const data = await res.json()
+  const res = await fetch(`${apiBaseUrl}tickets?searchId=${searchId}`)
+  const data = await res.json()
 
-    if (data.stop) {
-      sessionStorage.removeItem('searchId')
-    }
-    return data
-  } catch (err) {
-    console.error('Возникла проблема с fetch запросом: ', err.message)
-    return err.message
+  if (data.stop) {
+    sessionStorage.removeItem('searchId')
   }
+  console.log(data)
+  return data
 }
-
-export default getTickets
 
 /*
   const { tickets, stop } = await obj

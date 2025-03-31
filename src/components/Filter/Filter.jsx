@@ -3,19 +3,19 @@ import { connect, useDispatch, useSelector } from 'react-redux'
 
 import * as actions from '../../redux/actions/filterAction'
 
-const Filter = ({ filters, filterByPriice, filterByFastest, filterByOptimal }) => {
+const Filter = ({ filters, filterByPriiceAC, filterByFastestAC, filterByOptimalAC }) => {
   const dispatch = useDispatch()
 
   const handleFilterByPrice = () => {
-    dispatch(filterByPriice())
+    dispatch(filterByPriiceAC())
   }
 
   const handleFilterByFastest = () => {
-    dispatch(filterByFastest())
+    dispatch(filterByFastestAC())
   }
 
   const handleFilterByOptimal = () => {
-    dispatch(filterByOptimal())
+    dispatch(filterByOptimalAC())
   }
 
   return (

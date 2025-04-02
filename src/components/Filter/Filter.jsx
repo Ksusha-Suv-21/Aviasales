@@ -1,55 +1,9 @@
 import classes from './Filter.module.scss'
-import { connect, useDispatch, useSelector } from 'react-redux'
+import { connect } from 'react-redux'
 
-import * as actions from '../../redux/actions/filterAction'
+import { filterAC } from '../../redux/actions/filterAction'
 
-const Filter = ({ filters, filterByPriiceAC, filterByFastestAC, filterByOptimalAC }) => {
-  const dispatch = useDispatch()
-
-  const handleFilterByPrice = () => {
-    dispatch(filterByPriiceAC())
-  }
-
-  const handleFilterByFastest = () => {
-    dispatch(filterByFastestAC())
-  }
-
-  const handleFilterByOptimal = () => {
-    dispatch(filterByOptimalAC())
-  }
-
-  return (
-    <ul className={classes.filter}>
-      <li
-        className={`${classes['filter__item']} ${filters.price ? classes['filter__selected'] : ''}`}
-        onClick={handleFilterByPrice}
-      >
-        <a className={classes['filter__item-link']}>САМЫЙ ДЕШЕВЫЙ</a>
-      </li>
-      <li
-        className={`${classes['filter__item']} ${filters.fastest ? classes['filter__selected'] : ''}`}
-        onClick={handleFilterByFastest}
-      >
-        <a className={classes['filter__item-link']}>САМЫЙ БЫСТРЫЙ</a>
-      </li>
-      <li
-        className={`${classes['filter__item']} ${filters.optimal ? classes['filter__selected'] : ''}`}
-        onClick={handleFilterByOptimal}
-      >
-        <a className={classes['filter__item-link']}>ОПТИМАЛЬНЫЙ</a>
-      </li>
-    </ul>
-  )
-}
-
-const mapStateToProps = (state) => ({ filters: state.filterReducer })
-export default connect(mapStateToProps, actions)(Filter)
-
-/*
-import { filterAction } from '../../redux/actions/filterAction'
-
-
-const Filter = ({ filters, filterAction }) => {
+const Filter = ({ filters, filterAC }) => {
   return (
     <ul className={classes.filter}>
       {filters.map((item, id) => {
@@ -57,7 +11,7 @@ const Filter = ({ filters, filterAction }) => {
           <li
             className={`${classes['filter__item']}  ${item.checked ? classes['filter__selected'] : ''}`}
             key={id}
-            onClick={item.checked ? () => {} : () => filterAction('filter', item.value)}
+            onClick={item.checked ? () => {} : () => filterAC('filter', item.value)}
           >
             <a className={classes['filter__item-link']}>{item.label}</a>
           </li>
@@ -66,8 +20,12 @@ const Filter = ({ filters, filterAction }) => {
     </ul>
   )
 }
+
 const mapStateToProps = (state) => ({ filters: state.filterReducer })
-export default connect(mapStateToProps, { filterAction })(Filter)
+export default connect(mapStateToProps, { filterAC })(Filter)
+
+/*
+
 ------------------------------------------
 
 const Filter = () => {

@@ -25,15 +25,5 @@ export const getTickets = async () => {
   if (data.stop) {
     sessionStorage.removeItem('searchId')
   }
-  console.log(data)
   return data
 }
-
-/*
-  const { tickets, stop } = await obj
-  if (obj.stop === true) {
-    sessionStorage.removeItem('searchId')
-  }
-
-  return { tickets, stop }
-*/

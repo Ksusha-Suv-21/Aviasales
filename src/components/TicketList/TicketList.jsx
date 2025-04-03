@@ -61,6 +61,9 @@ function TicketList({ tickets, gotTicketsAC, error, isLoading, filter, checkbox 
           {ticketsList.map((ticket, id) => {
             return <TicketCard key={id} ticket={ticket} />
           })}
+          <button className={classes['ticketList__button']} onClick={showMoreButton} count={count}>
+            ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
+          </button>
         </>
       ) : null}
 
@@ -71,10 +74,6 @@ function TicketList({ tickets, gotTicketsAC, error, isLoading, filter, checkbox 
           className={classes.errors}
         />
       ) : null}
-
-      <button className={classes['ticketList__button']} onClick={showMoreButton} count={count}>
-        ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
-      </button>
     </div>
   )
 }
